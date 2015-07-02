@@ -13,7 +13,10 @@
     average for all of these individual values written in the output file.
 
 \033[1mUSAGE\033[0m
-    %program <list_read_count> <fasta> <output> <average read length>
+    %program <list_read_count> <fasta> <output> <average read length> <#digits>
+
+    \033[1mNOTE\033[0m: #digits is an integer representing the number of desired
+    digits after the decimal point.
 
 \033[1mCREDITS\033[0m
     Doc Pants 2015 \m/
@@ -27,6 +30,7 @@ try:
     fasta_in = open(sys.argv[2], "rU")
     output = sys.argv[3]
     ave_read_lgth = float(sys.argv[4])
+    rounding_num = int(sys.argv[5])
     
 except:
     print __doc__
