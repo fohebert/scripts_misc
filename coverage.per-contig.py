@@ -69,7 +69,8 @@ def range(lst):
 
 # Coverage computation
 def cov(r_count,ave_r_lgth,contig_lgth):
-    return (float(r_count)*float(ave_r_lgth)) / float(contig_lgth)
+    coverage = float(r_count)*float(ave_r_lgth) / float(contig_lgth)
+    return (round(coverage, 1))
 
 # Average coverage computation
 def ave_cov(lst):
