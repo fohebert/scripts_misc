@@ -62,19 +62,19 @@ def median(lst):
     half = len(lst)/2
     lst.sort()
     if len(lst) % 2 == 0: # if list length is even, average middle two values
-        return (lst[half-1] + lst[half])/2
+        return (round((lst[half-1] + lst[half])/2, rounding_num))
     else:
-        return lst[half]
+        return (round(lst[half], rounding_num))
 
 # Compute the range of values 
 def range(lst):
     lst.sort()
-    return [lst[0],lst[-1]]
+    return ([lst[0],lst[-1]])
 
 # Coverage computation
 def cov(r_count,ave_r_lgth,contig_lgth):
     coverage = float(r_count)*float(ave_r_lgth) / float(contig_lgth)
-    return (round(coverage, 1))
+    return (round(coverage, rounding_num))
 
 # Average coverage computation
 def ave_cov(lst):
@@ -96,6 +96,7 @@ with open(read_count, "rU") as rc_in:
             coverages.append(coverage)
             out_f.write(contig + "\t" + str(coverage) + "\n")
 
-print "\n\033[1mMedian coverage\033[0m = ", median(coverages)
+print read_count
+print"\n\033[1mMedian coverage\033[0m = ", median(coverages)
 print "\n\033[1mAverage coverage\033[0m = ", ave_cov(coverages)
 print "\n\033[1mRange\033[0m = ", range(coverages)[0], ",", range(coverages)[-1], "\n"
