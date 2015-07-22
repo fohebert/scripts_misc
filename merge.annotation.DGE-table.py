@@ -164,6 +164,7 @@ with open(out_DGE_table, "w") as out_DGE:
     with open(out_TSV_annotation, "w") as out_anno:
         
         # Creates DGE table header
+        out_DGE.write("\t" + "Annotation")
         for col_num in DGE_in_header:
             out_DGE.write("\t" + DGE_in_header[col_num])
         
