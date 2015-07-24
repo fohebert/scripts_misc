@@ -128,7 +128,7 @@ with open(corset_clusters, "rU") as clst_in:
             clusters[clst]["transcripts"][transcript] = {}
             clusters[clst]["transcripts"][transcript]["annotation"] = trspt_annotation[transcript]["annotation"]
             clusters[clst]["transcripts"][transcript]["GO"] = trspt_annotation[transcript]["GO"]
-        elif clst in clusters:
+        else clst in clusters:
             clusters[clst]["transcripts"][transcript] = {}
             clusters[clst]["transcripts"][transcript]["annotation"] = trspt_annotation[transcript]["annotation"]
             clusters[clst]["transcripts"][transcript]["GO"] = trspt_annotation[transcript]["GO"]
@@ -139,7 +139,7 @@ with open(DGE_table, "rU") as in_DGE:
         line = line.strip()
         
         # Keeps in a dictionnary the name of each column in DGE table
-        if re.findall("P.Value", line) != []:
+        if re.findall("P.Value", line):
             tot_num_col = len(line.split("\t"))
             count = 1
             while count <= tot_num_col:
