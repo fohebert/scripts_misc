@@ -15,7 +15,6 @@ from Bio import SeqIO
 try:
     in_fasta = sys.argv[1]
     num_seq = int(sys.argv[2])
-    out_prefix = sys.argv[3]
 except:
     print __doc__
     sys.exit(1)
