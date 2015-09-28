@@ -6,7 +6,7 @@
     sequences.
 
 \033[1mUSAGE\033[0m
-    %program <input_fasta> <num_seq> <out_prefix>
+    %program <input_fasta> <num_seq>
 """
 
 import sys
